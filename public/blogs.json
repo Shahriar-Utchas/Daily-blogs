@@ -7,7 +7,8 @@
     "author": "Hamza Sohail",
     "posted_date": "September 15, 2023",
     "reading_time": 5,
-    "hashtags": ["beginners", "es6"]
+    "hashtags": ["beginners", "es6"],
+    "details": "In this blog post, we will explore the top 10 ES6 features that can greatly improve your JavaScript code. We will cover modern features like arrow functions, template literals, destructuring, and more. Whether you're a beginner or an experienced developer, these ES6 features will help you write cleaner, more efficient code. Join us as we dive into how to use these features effectively in your day-to-day JavaScript projects."
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "author": "Sajal Ali",
     "posted_date": "August 28, 2023",
     "reading_time": 4,
-    "hashtags": ["javascript", "coding", "dev"]
+    "hashtags": ["javascript", "coding", "dev"],
+    "details": "This blog is designed for absolute beginners to JavaScript, and it provides a fun and engaging introduction to JavaScript objects. We’ll start with the basics of objects, how to create them, and how to access their properties. Through simple examples and practical tips, you’ll quickly grasp how objects work in JavaScript, laying the foundation for more advanced topics like object-oriented programming."
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@
     "author": "Feroze Khan",
     "posted_date": "July 10, 2023",
     "reading_time": 10,
-    "hashtags": ["mid_level", "react"]
+    "hashtags": ["mid_level", "react"],
+    "details": "React components have a lifecycle that allows us to hook into various stages of a component’s life. In this blog, we’ll compare class-based components with functional components, focusing on their lifecycle methods, like componentDidMount, componentDidUpdate, and componentWillUnmount for class components, and the useEffect hook for functional components. By the end of this blog, you'll understand how to properly manage side effects and other lifecycle events in both types of components."
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@
     "author": "Anmol Baloch",
     "posted_date": "June 5, 2023",
     "reading_time": 9,
-    "hashtags": ["development", "resources"]
+    "hashtags": ["development", "resources"],
+    "details": "Looking for high-quality images and resources to use in your web projects without worrying about copyright issues? This blog post compiles a list of free image and resource websites that provide stunning, high-resolution images, icons, fonts, and UI elements for your website or app. These resources can help you create beautiful, professional-looking websites without spending a dime."
   },
   {
     "id": 5,
@@ -47,7 +51,8 @@
     "author": "Tariq Jamil",
     "posted_date": "May 18, 2023",
     "reading_time": 7,
-    "hashtags": ["javascript", "async", "promises"]
+    "hashtags": ["javascript", "async", "promises"],
+    "details": "Promises are an essential feature in modern JavaScript, used for handling asynchronous operations. In this blog, we’ll take a deep dive into understanding promises, how to create and handle them, and their role in making asynchronous code more readable. We will also explore some advanced topics like promise chaining, async/await syntax, and error handling in asynchronous JavaScript operations."
   },
   {
     "id": 6,
@@ -57,7 +62,8 @@
     "author": "Sania Qureshi",
     "posted_date": "April 22, 2023",
     "reading_time": 6,
-    "hashtags": ["css", "frontend", "layout"]
+    "hashtags": ["css", "frontend", "layout"],
+    "details": "CSS Grid and Flexbox are two powerful layout systems in modern web design. This blog post will compare and contrast the two, explaining their differences and when to use each one. We will cover how CSS Grid allows for complex two-dimensional layouts, while Flexbox is great for simpler, one-dimensional layouts. By the end, you'll know when and how to use each technique in your web development projects."
   },
   {
     "id": 7,
@@ -67,7 +73,8 @@
     "author": "Usman Rauf",
     "posted_date": "March 30, 2023",
     "reading_time": 8,
-    "hashtags": ["typescript", "beginners"]
+    "hashtags": ["typescript", "beginners"],
+    "details": "TypeScript has gained massive popularity in the web development community, and for good reason. In this blog, we’ll explain why TypeScript is worth learning in 2024, including its benefits over JavaScript like static typing, better tooling, and improved code quality. You’ll also learn how TypeScript can help you scale your applications and improve collaboration in team projects."
   },
   {
     "id": 8,
@@ -77,7 +84,8 @@
     "author": "Hira Khan",
     "posted_date": "March 2, 2023",
     "reading_time": 5,
-    "hashtags": ["tools", "vscode", "devlife"]
+    "hashtags": ["tools", "vscode", "devlife"],
+    "details": "VSCode is one of the most popular code editors among web developers. In this blog, we’ll highlight the top 5 VSCode extensions that every web developer should install. These extensions will help you with tasks like code formatting, debugging, Git integration, and improving your productivity while coding in JavaScript, CSS, HTML, and other languages."
   },
   {
     "id": 9,
@@ -87,7 +95,8 @@
     "author": "Ali Hassan",
     "posted_date": "February 12, 2023",
     "reading_time": 12,
-    "hashtags": ["nodejs", "backend", "api"]
+    "hashtags": ["nodejs", "backend", "api"],
+    "details": "In this blog, you’ll learn how to build a simple API using Node.js and Express. We will guide you through setting up the project, creating RESTful routes, handling GET and POST requests, and connecting to a database. Whether you're a beginner or intermediate developer, this guide will help you understand how to create and deploy APIs efficiently with Node.js."
   },
   {
     "id": 10,
@@ -97,6 +106,7 @@
     "author": "Mehwish Fatima",
     "posted_date": "January 29, 2023",
     "reading_time": 6,
-    "hashtags": ["css", "tailwind", "frontend"]
+    "hashtags": ["css", "tailwind", "frontend"],
+    "details": "Tailwind CSS has become a go-to framework for many front-end developers. In this blog, we explore the reasons why developers love Tailwind CSS, including its utility-first approach, ease of customization, and the speed at which you can create responsive, modern designs. Learn how Tailwind can improve your workflow and why it’s a great choice for building stylish websites."
   }
 ]

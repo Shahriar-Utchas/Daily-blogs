@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-const ToggleTheme = ({ isDark, toggleTheme }) => {
+const ToggleTheme = () => {
+    const [isDark, setIsDark] = useState(false);
 
+    useEffect(() => {
+        // Get the saved theme from localStorage or default to 'light' if it's not found
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        setIsDark(savedTheme === 'dark');
+    }, []);
+
+    const toggleTheme = () => {
+        const newTheme = isDark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        setIsDark(!isDark);
+    };
     return (
         <label className="swap swap-rotate cursor-pointer">
             {/* hidden checkbox controls the theme toggle */}
