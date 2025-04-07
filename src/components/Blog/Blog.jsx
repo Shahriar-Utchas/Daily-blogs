@@ -80,7 +80,7 @@ const Blog = ({ blog, updateTotalTimeRead, setBookmarkedBlogs }) => {
     }, [isRead, blog.id]);
 
     return (
-        <div className="card bg-base-300 w-130 shadow-sm">
+        <div className="card bg-base-300 w-full sm:w-130 shadow-sm">
             <figure className="px-10 pt-10">
                 <img
                     src={blog.cover}
@@ -109,16 +109,16 @@ const Blog = ({ blog, updateTotalTimeRead, setBookmarkedBlogs }) => {
                     {isExpanded ? 'See Less' : 'See More'}
                 </button>
 
-                <div className="card-actions justify-between w-full mt-4">
+                <div className="card-actions justify-between w-full mt-4 flex flex-wrap gap-4">
                     <button
                         onClick={toggleReadStatus}
-                        className={`btn ${isRead ? 'btn-success' : 'btn-outline'}`}
+                        className={`btn ${isRead ? 'btn-success' : 'btn-outline'} w-full sm:w-auto`}
                     >
                         {isRead ? 'Marked as Read' : 'Mark as Read'}
                     </button>
                     <button
                         onClick={toggleBookmark}
-                        className={`btn ${isBookmarked ? 'btn-warning' : 'btn-outline'} hover:bg-yellow-500 cursor-pointer`}
+                        className={`btn ${isBookmarked ? 'btn-warning' : 'btn-outline'} hover:bg-yellow-500 cursor-pointer w-full sm:w-auto`}
                     >
                         <FaBookmark className="mr-2" />
                         {isBookmarked ? 'Bookmarked' : 'Bookmark'}
