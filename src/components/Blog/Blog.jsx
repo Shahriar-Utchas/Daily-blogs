@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaBookmark } from 'react-icons/fa';
 
-// Helper functions to manage bookmarks in localStorage
 const getBookmarkedBlogs = () => {
     const bookmarks = localStorage.getItem('bookmarks');
     return bookmarks ? JSON.parse(bookmarks) : [];
@@ -21,12 +20,11 @@ const removeFromBookmarks = (id) => {
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 };
 
-const Blog = ({ blog, updateTotalTimeRead }) => {
+const Blog = ({ blog, updateTotalTimeRead, setBookmarkedBlogs }) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const [isRead, setIsRead] = useState(false);
     const [isBookmarked, setIsBookmarked] = useState(false);
 
-    // Truncate after a certain number of characters to simulate "one line"
     const truncatedDetails = blog.details.length > 100 ? blog.details.slice(0, 100) + '...' : blog.details;
 
     const toggleDescription = () => {
@@ -34,11 +32,11 @@ const Blog = ({ blog, updateTotalTimeRead }) => {
     };
 
     const toggleReadStatus = () => {
-        setIsRead(!isRead); // Toggle the read status
+        setIsRead(!isRead);
         if (!isRead) {
-            updateTotalTimeRead(blog.reading_time); // Add reading time to total time if marked as read
+            updateTotalTimeRead(blog.reading_time);
         } else {
-            updateTotalTimeRead(-blog.reading_time); // Subtract reading time if unmarked as read
+            updateTotalTimeRead(-blog.reading_time);
         }
     };
 
@@ -49,16 +47,17 @@ const Blog = ({ blog, updateTotalTimeRead }) => {
         } else {
             removeFromBookmarks(blog.id);
         }
+
+        const updatedBookmarks = getBookmarkedBlogs();
+        setBookmarkedBlogs(updatedBookmarks); // Update the parent component with the new bookmark list
     };
 
     useEffect(() => {
-        // Retrieve the read status for each blog from localStorage on initial load
         const readBlogs = JSON.parse(localStorage.getItem('readBlogs')) || [];
         if (readBlogs.includes(blog.id)) {
             setIsRead(true);
         }
 
-        // Check if the blog is bookmarked from localStorage
         const bookmarks = getBookmarkedBlogs();
         if (bookmarks.includes(blog.id)) {
             setIsBookmarked(true);
@@ -66,7 +65,6 @@ const Blog = ({ blog, updateTotalTimeRead }) => {
     }, [blog.id]);
 
     useEffect(() => {
-        // Save the read status of the blog to localStorage
         const readBlogs = JSON.parse(localStorage.getItem('readBlogs')) || [];
         if (isRead) {
             if (!readBlogs.includes(blog.id)) {
@@ -92,8 +90,6 @@ const Blog = ({ blog, updateTotalTimeRead }) => {
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{blog.title}</h2>
-
-                {/* Author Info - Profile Image and Name in a Row */}
                 <div className="flex items-center justify-center space-x-3">
                     <img
                         src={blog.author_img}
@@ -103,20 +99,16 @@ const Blog = ({ blog, updateTotalTimeRead }) => {
                     <p className="text-sm text-gray-500">{blog.author}</p>
                 </div>
 
-                {/* Display Reading Time Before Description */}
                 <p className="text-sm text-gray-500 mt-2">{blog.reading_time} min read</p>
 
-                {/* Display truncated or full description based on state */}
                 <p className="my-4">
                     {isExpanded ? blog.details : truncatedDetails}
                 </p>
 
-                {/* Toggle button */}
                 <button onClick={toggleDescription} className="text-blue-500 hover:underline">
                     {isExpanded ? 'See Less' : 'See More'}
                 </button>
 
-                {/* Buttons - Mark as Read and Bookmark Side by Side */}
                 <div className="card-actions justify-between w-full mt-4">
                     <button
                         onClick={toggleReadStatus}
@@ -126,9 +118,10 @@ const Blog = ({ blog, updateTotalTimeRead }) => {
                     </button>
                     <button
                         onClick={toggleBookmark}
-                        className={`btn ${isBookmarked ? 'btn-primary' : 'btn-outline'}`}
+                        className={`btn ${isBookmarked ? 'btn-warning' : 'btn-outline'} hover:bg-yellow-500 cursor-pointer`}
                     >
-                        <FaBookmark className="mr-2" /> {isBookmarked ? 'Bookmarked' : 'Bookmark'}
+                        <FaBookmark className="mr-2" />
+                        {isBookmarked ? 'Bookmarked' : 'Bookmark'}
                     </button>
                 </div>
             </div>
