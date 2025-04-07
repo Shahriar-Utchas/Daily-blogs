@@ -1,9 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaBookmark } from 'react-icons/fa';
 
-const Blog = ({ blog }) => {
+// Helper functions to manage bookmarks in localStorage
+const getBookmarkedBlogs = () => {
+    const bookmarks = localStorage.getItem('bookmarks');
+    return bookmarks ? JSON.parse(bookmarks) : [];
+};
+
+const addToBookmarks = (id) => {
+    const bookmarks = getBookmarkedBlogs();
+    if (!bookmarks.includes(id)) {
+        bookmarks.push(id);
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    }
+};
+
+const removeFromBookmarks = (id) => {
+    let bookmarks = getBookmarkedBlogs();
+    bookmarks = bookmarks.filter(blogId => blogId !== id);
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+};
+
+const Blog = ({ blog, updateTotalTimeRead }) => {
     const [isExpanded, setIsExpanded] = useState(false);
-    const [isRead, setIsRead] = useState(false); // State to track if the blog is marked as read
+    const [isRead, setIsRead] = useState(false);
+    const [isBookmarked, setIsBookmarked] = useState(false);
 
     // Truncate after a certain number of characters to simulate "one line"
     const truncatedDetails = blog.details.length > 100 ? blog.details.slice(0, 100) + '...' : blog.details;
@@ -14,10 +35,54 @@ const Blog = ({ blog }) => {
 
     const toggleReadStatus = () => {
         setIsRead(!isRead); // Toggle the read status
+        if (!isRead) {
+            updateTotalTimeRead(blog.reading_time); // Add reading time to total time if marked as read
+        } else {
+            updateTotalTimeRead(-blog.reading_time); // Subtract reading time if unmarked as read
+        }
     };
 
+    const toggleBookmark = () => {
+        setIsBookmarked(!isBookmarked);
+        if (!isBookmarked) {
+            addToBookmarks(blog.id);
+        } else {
+            removeFromBookmarks(blog.id);
+        }
+    };
+
+    useEffect(() => {
+        // Retrieve the read status for each blog from localStorage on initial load
+        const readBlogs = JSON.parse(localStorage.getItem('readBlogs')) || [];
+        if (readBlogs.includes(blog.id)) {
+            setIsRead(true);
+        }
+
+        // Check if the blog is bookmarked from localStorage
+        const bookmarks = getBookmarkedBlogs();
+        if (bookmarks.includes(blog.id)) {
+            setIsBookmarked(true);
+        }
+    }, [blog.id]);
+
+    useEffect(() => {
+        // Save the read status of the blog to localStorage
+        const readBlogs = JSON.parse(localStorage.getItem('readBlogs')) || [];
+        if (isRead) {
+            if (!readBlogs.includes(blog.id)) {
+                readBlogs.push(blog.id);
+            }
+        } else {
+            const index = readBlogs.indexOf(blog.id);
+            if (index > -1) {
+                readBlogs.splice(index, 1);
+            }
+        }
+        localStorage.setItem('readBlogs', JSON.stringify(readBlogs));
+    }, [isRead, blog.id]);
+
     return (
-        <div className="card bg-base-300 w-96 shadow-sm">
+        <div className="card bg-base-300 w-130 shadow-sm">
             <figure className="px-10 pt-10">
                 <img
                     src={blog.cover}
@@ -27,7 +92,7 @@ const Blog = ({ blog }) => {
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{blog.title}</h2>
-                
+
                 {/* Author Info - Profile Image and Name in a Row */}
                 <div className="flex items-center justify-center space-x-3">
                     <img
@@ -59,8 +124,11 @@ const Blog = ({ blog }) => {
                     >
                         {isRead ? 'Marked as Read' : 'Mark as Read'}
                     </button>
-                    <button className="btn btn-outline">
-                        <FaBookmark className="mr-2" /> Bookmark
+                    <button
+                        onClick={toggleBookmark}
+                        className={`btn ${isBookmarked ? 'btn-primary' : 'btn-outline'}`}
+                    >
+                        <FaBookmark className="mr-2" /> {isBookmarked ? 'Bookmarked' : 'Bookmark'}
                     </button>
                 </div>
             </div>
