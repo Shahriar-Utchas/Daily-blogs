@@ -1,20 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-const ToggleTheme = () => {
-    const [isDark, setIsDark] = useState(false);
-
-    useEffect(() => {
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        setIsDark(savedTheme === 'dark');
-    }, []);
-
-    const toggleTheme = () => {
-        const newTheme = isDark ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        setIsDark(!isDark);
-    };
+const ToggleTheme = ({ isDark, toggleTheme }) => {
 
     return (
         <label className="swap swap-rotate cursor-pointer">

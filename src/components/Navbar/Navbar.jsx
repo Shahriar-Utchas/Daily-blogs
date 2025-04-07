@@ -1,11 +1,11 @@
 import React from 'react';
 import ToggleTheme from '../Themes/ToggleTheme';
 
-const Navbar = () => {
+const Navbar = ({isDark, toggleTheme}) => {
     return (
         <div className="navbar bg-base-100 shadow-sm">
             <div className="flex-1">
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <a className="btn btn-ghost text-xl">Daily Blogs</a>
             </div>
             <div className="flex gap-2">
                 <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
@@ -30,7 +30,7 @@ const Navbar = () => {
                         <li><a>Logout</a></li>
                     </ul>
                 </div>
-                <ToggleTheme></ToggleTheme>
+                <ToggleTheme isDark={isDark} toggleTheme={toggleTheme} />
             </div>
         </div>
     );

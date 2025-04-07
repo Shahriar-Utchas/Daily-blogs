@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "cover": "https://picsum.photos/id/1011/600/400",
+    "title": "Top 10 ES6 Features You Must Know",
+    "author_img": "https://i.pravatar.cc/150?img=1",
+    "author": "Hamza Sohail",
+    "posted_date": "September 15, 2023",
+    "reading_time": 5,
+    "hashtags": ["beginners", "es6"]
+  },
+  {
+    "id": 2,
+    "cover": "https://picsum.photos/id/1012/600/400",
+    "title": "JavaScript Objects for Absolute Beginners: A Fun Introduction",
+    "author_img": "https://i.pravatar.cc/150?img=2",
+    "author": "Sajal Ali",
+    "posted_date": "August 28, 2023",
+    "reading_time": 4,
+    "hashtags": ["javascript", "coding", "dev"]
+  },
+  {
+    "id": 3,
+    "cover": "https://picsum.photos/id/1013/600/400",
+    "title": "Component Lifecycle in React — Class vs Functional",
+    "author_img": "https://i.pravatar.cc/150?img=3",
+    "author": "Feroze Khan",
+    "posted_date": "July 10, 2023",
+    "reading_time": 10,
+    "hashtags": ["mid_level", "react"]
+  },
+  {
+    "id": 4,
+    "cover": "https://picsum.photos/id/1014/600/400",
+    "title": "Free Image & Resource Collection for Websites",
+    "author_img": "https://i.pravatar.cc/150?img=4",
+    "author": "Anmol Baloch",
+    "posted_date": "June 5, 2023",
+    "reading_time": 9,
+    "hashtags": ["development", "resources"]
+  },
+  {
+    "id": 5,
+    "cover": "https://picsum.photos/id/1015/600/400",
+    "title": "Mastering Promises in JavaScript",
+    "author_img": "https://i.pravatar.cc/150?img=5",
+    "author": "Tariq Jamil",
+    "posted_date": "May 18, 2023",
+    "reading_time": 7,
+    "hashtags": ["javascript", "async", "promises"]
+  },
+  {
+    "id": 6,
+    "cover": "https://picsum.photos/id/1016/600/400",
+    "title": "CSS Grid vs Flexbox: A Detailed Comparison",
+    "author_img": "https://i.pravatar.cc/150?img=6",
+    "author": "Sania Qureshi",
+    "posted_date": "April 22, 2023",
+    "reading_time": 6,
+    "hashtags": ["css", "frontend", "layout"]
+  },
+  {
+    "id": 7,
+    "cover": "https://picsum.photos/id/1017/600/400",
+    "title": "Why TypeScript is Worth Learning in 2024",
+    "author_img": "https://i.pravatar.cc/150?img=7",
+    "author": "Usman Rauf",
+    "posted_date": "March 30, 2023",
+    "reading_time": 8,
+    "hashtags": ["typescript", "beginners"]
+  },
+  {
+    "id": 8,
+    "cover": "https://picsum.photos/id/1018/600/400",
+    "title": "Top 5 VSCode Extensions for Web Devs",
+    "author_img": "https://i.pravatar.cc/150?img=8",
+    "author": "Hira Khan",
+    "posted_date": "March 2, 2023",
+    "reading_time": 5,
+    "hashtags": ["tools", "vscode", "devlife"]
+  },
+  {
+    "id": 9,
+    "cover": "https://picsum.photos/id/1019/600/400",
+    "title": "Build a Simple API with Node.js",
+    "author_img": "https://i.pravatar.cc/150?img=9",
+    "author": "Ali Hassan",
+    "posted_date": "February 12, 2023",
+    "reading_time": 12,
+    "hashtags": ["nodejs", "backend", "api"]
+  },
+  {
+    "id": 10,
+    "cover": "https://picsum.photos/id/1020/600/400",
+    "title": "Tailwind CSS: Why Devs Love It",
+    "author_img": "https://i.pravatar.cc/150?img=10",
+    "author": "Mehwish Fatima",
+    "posted_date": "January 29, 2023",
+    "reading_time": 6,
+    "hashtags": ["css", "tailwind", "frontend"]
+  }
+]
