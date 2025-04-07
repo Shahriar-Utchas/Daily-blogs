@@ -41,8 +41,8 @@ const Blogs = ({ isDark }) => {
 
     return (
         <>
-            <div className="flex justify-between items-center m-4">
-                <h2>Total Time Read: {totalTimeRead} mins</h2>
+            <div className="flex flex-col sm:flex-row justify-between items-center m-4">
+                <h2 className="mb-2 sm:mb-0">Total Time Read: {totalTimeRead} mins</h2>
                 <div className="flex items-center space-x-2">
                     <button
                         onClick={toggleShowBookmarks}
